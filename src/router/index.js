@@ -23,31 +23,30 @@ Router.prototype.push = function push(location) {
 // }
 
 
-const Index = ()=>import("@/components/Index")
-const Home = ()=>import("@/components/Home")
-const Message = ()=>import("@/components/Message")
-const About = ()=>import("@/components/About")
+// const Index = ()=>import("@/components/Index")
+// const Home = ()=>import("@/components/Home")
+// const Message = ()=>import("@/components/Message")
+// const About = ()=>import("@/components/About")
 export default new Router({
   routes: [
      {
           path: '/',
-          name: 'Index',
-          component: Index,
+          component: ()=>import('@/components/Index'),
           children:[
             {
               path: '/',
               name: 'Home',
-              component: Home
+              component: ()=>import('@/components/Home')
             },
             {
               path: '/Message',
               name: 'Message',
-              component: Message
+               component: ()=>import('@/components/Message')
             },
             {
               path: '/About',
               name: 'About',
-              component: About
+               component: ()=>import('@/components/About')
             },
             ]
             }

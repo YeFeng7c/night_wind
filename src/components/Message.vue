@@ -18,6 +18,9 @@
         </el-table-column>
         <el-table-column prop="message_time" label="时间" width="150">
         </el-table-column>
+        <el-table-column label="" width="100">
+          <button class="reply" @click="reply();">回复</button>
+        </el-table-column>
       </el-table>
     </div>
   </div>
@@ -31,7 +34,7 @@
         form: {
           message_name: '',
           message_info: '',
-        }
+        },
       };
     },
     methods: {
@@ -49,8 +52,11 @@
           }
 
         }, res => {
-          console.log(res);
+          // console.log(res);
         });
+      },
+      reply:function(){
+        alert("没用")
       }
     },
     created() {
@@ -64,6 +70,14 @@
 </script>
 
 <style scoped>
+
+  .reply{
+    width: 60px;
+    height: 30px;
+    color: wheat;
+    border: none;
+    background-color: orange;
+  }
   .el-input {
     position: absolute;
     width: 180px;
